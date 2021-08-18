@@ -18,7 +18,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-        uses: actions/setup-node@v1
+      - uses: actions/setup-node@v1
       - run: cd gatsby-blog
       - run: yarn install && yarn build
       - name: ssh key generate
