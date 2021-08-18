@@ -19,9 +19,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/setup-node@v1
-      - run: pwd
-      - run: cd gatsby-blog
       - run: yarn install && yarn build
+        working-directory: ./gatsby-blog
       - name: ssh key generate
         run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
         env:
