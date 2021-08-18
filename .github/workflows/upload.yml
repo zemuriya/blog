@@ -18,9 +18,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - name: gulp build
         uses: actions/setup-node@v1
+      - run: cd gatsby-blog
       - run: yarn install && yarn build
       - name: ssh key generate
         run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
